@@ -39,8 +39,9 @@ DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `capterra_id` int DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `capterra_id` int NOT NULL,
+  `full_url` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `website` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -48,7 +49,7 @@ CREATE TABLE `items` (
   FULLTEXT KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `items` (`id`, `name`, `description`, `capterra_id`, `image`, `website`, `date_created`) VALUES
-(1,	'Edmodo',	'',	0,	'https://cdn0.capterra-static.com/logos/150/2091177.png',	'http://www.edmodo.com',	'2020-02-20 17:44:36');
+INSERT INTO `items` (`id`, `name`, `description`, `capterra_id`, `full_url`, `image`, `website`, `date_created`) VALUES
+(1,	'Edmodo',	'',	0,	'',	'https://cdn0.capterra-static.com/logos/150/2091177.png',	'http://www.edmodo.com',	'2020-02-20 17:44:36');
 
--- 2020-02-26 15:51:24
+-- 2020-02-26 16:44:34
